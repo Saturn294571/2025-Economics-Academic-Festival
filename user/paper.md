@@ -74,6 +74,10 @@ $$ BP = NX(e, Y) + KA(r - r^* - \theta) = 0 $$
 1.  **초기 충격:** 재정 확장으로 $IS$ 곡선이 우측 이동하여 소득($Y$) 증가 압력을 가한다.
 2.  **정책 엇박자:** 중앙은행의 금리 동결로 $LM$ 곡선이 이를 수용(Accommodate)하여 금리($r$)는 낮은 수준에 머문다.
 3.  **구조적 이탈:** 리스크 프리미엄 급등으로 $BP$ 곡선은 훨씬 높은 금리 수준을 요구한다.
+    
+    ![IS-LM-BP Diagram](/home/pluto2477/Documents/2025-Economics-Academic-Festival/src/image/is_lm_bp_diagram.png)
+    *<그림 1> 수정된 IS-LM-BP 모형에서의 균형 이동: 재정 우위와 리스크 프리미엄 충격이 결합되어 환율 폭등을 유발하는 경로를 보여준다.*
+
 4.  **결과:** 국내 금리가 균형 금리보다 현저히 낮은 상태($r \ll r^* + \theta$)가 지속되어 대규모 자본 유출(Capital Flight)이 발생한다.
 5.  **조정:** 외환 시장의 불균형을 해소하기 위해 환율($e$)이 폭등해야만 하며, 이는 수입 물가 상승($P \uparrow$)을 통해 실질 소득을 감소시키는 **'나쁜 균형(Bad Equilibrium)'**으로 귀결된다.
 
@@ -93,13 +97,23 @@ $$ BP = NX(e, Y) + KA(r - r^* - \theta) = 0 $$
     *   $\Delta \theta_t$: **국가 리스크 프리미엄 (CDS 프리미엄)**
     *   $\Delta \ln(e_t)$: 원/달러 환율 변동률
 
+    ![Time Series Plot](/home/pluto2477/Documents/2025-Economics-Academic-Festival/src/image/var_time_series.png)
+    *<그림 2> 주요 변수의 시계열 추이: 2025년 하반기 리스크 프리미엄($\Delta \theta$)과 환율($\Delta \ln e$)의 동반 급등이 관측된다.*
+
 ### 4.2 분석 모형: VAR (Vector Autoregression)
 변수 간의 내생성과 동태적 상호작용을 포착하기 위해 VAR 모형을 설정하였다. 최적 시차(Lag)는 AIC 기준 1시차(Lag 1)가 선정되었다.
 $$ Y_t = c + A_1 Y_{t-1} + e_t $$
 
 ### 4.3 분석 결과 (Results)
 1.  **충격 반응 분석 (Impulse Response Analysis):**
-    *   리스크 프리미엄($\theta$)의 1표준편차 충격에 대해 환율($e$)은 **즉각적이고 유의미한 양(+)의 반응**을 보였다. 이는 리스크 상승이 환율 폭등의 직접적 원인임을 시사한다.
+    *   **리스크 프리미엄($\theta$) 충격:**
+        ![IRF Theta to E](/home/pluto2477/Documents/2025-Economics-Academic-Festival/src/image/var_irf_theta_to_e.png)
+        *<그림 3> 리스크 프리미엄 충격에 대한 환율 반응: $\theta$의 충격 발생 시 환율($e$)은 즉각적이고 유의미하게 상승하며, 그 효과는 지속적이다.*
+
+    *   **재정지출($G$) 충격:**
+        ![IRF G to E](/home/pluto2477/Documents/2025-Economics-Academic-Festival/src/image/var_irf_G_to_e.png)
+        *<그림 4> 재정지출 충격에 대한 환율 반응: 재정지출($G$) 충격은 환율에 통계적으로 유의미한 영향을 미치지 못한다. 이는 단순한 재정 확대보다 리스크 요인이 더 중요함을 시사한다.*
+
 2.  **강건성 검정 (Robustness Check):**
     *   OLS 회귀분석 결과에서도 $\Delta \theta$의 계수는 0.0018 ($P < 0.001$)로 통계적으로 매우 유의하였다.
     *   반면, 재정지출($G$)과 금리차($r-r^*$) 변수는 통계적 유의성이 낮게 나타나, 현재의 환율 상승이 펀더멘털(금리차)보다는 **신뢰의 위기(리스크)**에 기인함을 뒷받침한다.
@@ -139,6 +153,7 @@ $$ Y_t = c + A_1 Y_{t-1} + e_t $$
 
 1.  **Sargent, T. J., & Wallace, N. (1981).** "Some Unpleasant Monetarist Arithmetic." *Federal Reserve Bank of Minneapolis Quarterly Review*, 5(3), 1-17.
 2.  **Bianchi, F., Faccini, R., & Melosi, L. (2022).** "Fiscal Policy and Excess Inflation during Covid-19." *NBER Working Paper No. 30613*.
-3.  **Bank of Korea (2025).** "Economic Outlook and Monetary Policy Report (November 2025)."
-4.  **Syuka World (2025).** "Why is the Exchange Rate Soaring despite Export Boom?" (YouTube Transcript Analysis).
-5.  **Statistics Korea (KOSTAT) & ECOS.** Macroeconomic Data Series (2000-2025).
+3.  **Bank of Korea (2025).** "Governor's Press Conference on Monetary Policy Decision (November 2025)." (Transcript).
+4.  **The UK Financial Crisis of 2022.** (2022). "Case Study on the Truss Government's Mini-Budget." (Internal Report).
+5.  **Syuka World (2025).** "Why is the Exchange Rate Soaring despite Export Boom?" (YouTube Transcript Analysis).
+6.  **Statistics Korea (KOSTAT) & ECOS.** Macroeconomic Data Series (2000-2025).

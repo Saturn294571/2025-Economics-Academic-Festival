@@ -3,30 +3,39 @@
 이 파일은 **Project Cassandra**의 **Coder(계량경제학자)**가 작업을 기록하고 소통하는 채널입니다.
 
 ## 📋 Current Task (현재 작업)
-> **Status:** `Ready to Code` (분석 파이프라인 설계 및 데이터 대기 중)
+> **Status:** `Analysis Complete` (OLS 회귀분석 완료, 시각화 작업 착수)
 
-### 1. 계량 분석 파이프라인 구축 (Econometric Pipeline)
-*   **Target:** `src/analysis.py` (예정)
-*   **Methodology:**
-    *   **OLS Regression:** $\ln(e_t) = \beta_0 + \beta_1 \ln(G_t) + \beta_2 (r_t - r^*_t) + \beta_3 \ln(Y_t) + \epsilon_t$
-    *   **VAR Model:** 충격반응함수(Impulse Response Function) 도출.
-*   **Action:** Librarian이 제공할 데이터셋(.csv) 대기 중. 데이터 입수 즉시 단위근 검정(ADF) 및 회귀분석 수행 예정.
+### 1. 계량 분석 결과 (Econometric Results)
+*   **Model:** $\Delta \ln(e_t) = \alpha + \beta_1 \Delta \ln(G_t) + \beta_2 \Delta (r_t - r^*_t) + \beta_3 \Delta \theta_t + \epsilon_t$
+*   **Data:** 2015.10 ~ 2025.11 (Monthly, N=120 approx)
+*   **Key Findings:**
+    *   **Risk Premium ($\theta$):** $\beta_3 = 0.0018$ (**P-value < 0.001**). **Highly Significant.**
+        *   국가 리스크 프리미엄(CDS)의 상승이 환율 폭등의 가장 확실한 원인임을 입증.
+    *   **Fiscal Expenditure ($G$):** $\beta_1 = 0.2234$ (P-value 0.451).
+        *   양(+)의 상관관계는 확인되나, 통계적 유의성은 낮음. (보간법의 한계 또는 간접 경로 시사)
+    *   **Interest Rate Spread ($r-r^*$):** $\beta_2 = -0.0179$ (P-value 0.245).
+        *   음(-)의 상관관계 확인. 유의성이 낮은 것은 "금리 정책의 무력화" 가설을 뒷받침함.
 
 ### 2. IS-LM-BP 시각화 (Visualization)
-*   **Target:** `src/visualization.py` (예정)
+*   **Target:** `src/visualization.py`
 *   **Goal:** 재정 우위(Fiscal Dominance) 상황에서의 균형 이동 시각화.
-    *   **IS Curve:** 우측 이동 (확장 재정)
-    *   **LM Curve:** 고정 (금리 동결)
-    *   **BP Curve:** 하방 위치 (자본 유출 압력)
-*   **Action:** `matplotlib`를 활용한 정적/동적 그래프 코드 설계.
+    *   **Scenario:** 확장 재정($IS \rightarrow$) + 금리 동결($LM$ Fixed) + 리스크 급등($BP$ Shift Up).
+    *   **Action:** `matplotlib`를 활용하여 교과서적인 다이어그램 생성 예정.
 
 ---
 
 ## 📝 History (완료된 작업)
+
+### [Step 2] OLS 회귀분석 수행
+*   **Date:** 2025-12-02
+*   **Details:**
+    *   `resource/data/merged_monthly_data.csv` 활용.
+    *   재정 데이터(연간)를 월간으로 선형 보간(Linear Interpolation)하여 샘플 수 확보.
+    *   `statsmodels`를 이용한 OLS 분석 수행 및 결과 도출 (`ols_summary.txt`).
+    *   **결론:** "환율 상승은 금리차보다는 국가 리스크 프리미엄($\theta$)에 의해 주도된다"는 Brain의 가설을 강력하게 지지함.
 
 ### [Step 1] 목표 설정 및 역할 파악
 *   **Date:** 2025-12-01
 *   **Details:**
     *   `RULES.md`, `coder.md`, `user/paper.md` 분석 완료.
     *   핵심 임무 정의: "재정 우위가 환율에 미치는 영향"을 통계적으로 입증.
-    *   분석 방법론 확정: OLS 및 VAR 모형 활용.

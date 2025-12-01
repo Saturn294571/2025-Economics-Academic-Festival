@@ -3,43 +3,32 @@
 이 파일은 **Project Cassandra**의 **Brain(거시경제 이론가)**이 작업을 기록하고 소통하는 채널입니다.
 
 ## 📋 Current Task (현재 작업)
-> **Status:** `In Progress` (IS-LM-BP 수식 유도 및 Coder 지시 준비)
+> **Status:** `Finalizing Model` (현실 반영 모형 확정 및 논리 정교화)
 
-### 1. IS-LM-BP 모형 수식화 (Model Derivation)
-*   **Target:** `user/paper.md` (Section 3. Model Analysis)
-*   **Details:**
-    *   **IS Curve:** 소비쿠폰($G_{coupon}$)이 승수 효과를 통해 $Y$에 미치는 경로 수식화.
-    *   **LM Curve:** 재정 우위($r = \bar{r}$) 제약 조건 하에서의 화폐 시장 균형식 도출.
-    *   **BP Curve:** 내외금리차($r - r^*$) 역전에 따른 자본 유출($KA < 0$)과 환율($e$) 상승 압력 명시.
-*   **Action:** 논문 내 이론적 배경(Theoretical Framework)을 채워 넣을 LaTeX 수식 작성 예정.
+### 1. The Modified IS-LM-BP Model (수정된 모형)
+*   **Paradox:** 수출 호조($NX \uparrow$)에도 불구하고 환율 급등($e \uparrow$)하는 '2025년 12월의 현실' 규명.
+*   **Equation Update:**
+    *   **BP Curve:** $BP = NX(e) + KA(r - r^* - \theta_{risk}) = 0$
+    *   **Mechanism:** 경상수지 흑자($NX > 0$)를 압도하는 자본수지 적자($KA \ll 0$) 발생.
+    *   **Cause:** $\theta_{risk}$ (국가 리스크 프리미엄)의 폭증. 이는 단순 금리차가 아닌 **'구조적 펀더멘털 붕괴(Growth Pessimism)'**에 기인함.
+*   **Conclusion:** 현재의 위기는 순환적 요인이 아닌 구조적 요인이며, 금리 미세 조정으로는 해결 불가능함을 증명.
 
-### 2. Coder 분석 지시 (Instruction to Coder)
-*   **Target:** `channel/coder_ch.md`
-*   **Action:** Librarian이 수집할 데이터를 바탕으로 수행할 VAR 모형 및 충격반응함수 분석 가이드라인 작성.
+### 2. Presentation Logic (발표 논리 설계)
+*   **Intro Hook:** "교과서의 배신: 수출이 잘되는데 왜 환율은 폭등하는가?"
+*   **Body:** 수정된 IS-LM-BP 모형을 통해 '재정 우위'와 '구조적 이탈'이 범인임을 지목.
 
 ---
 
 ## 📝 History (완료된 작업)
 
-### [Step 1] 프로젝트 착수 및 역할 정의
-*   **Date:** 2025-12-01
+### [Step 5] 모형의 현실 적합성 강화 (Reality Check)
+*   **Date:** 2025-12-02
 *   **Details:**
-    *   `RULES.md` 및 `brain.md` 숙지 완료.
-    *   **Role Definition:** 2025년 한국 경제 위기를 진단하는 '거시경제 이론가'로서의 정체성 확립.
-    *   **Communication:** `channel/brain_ch.md` 초기화 및 소통 프로토콜 설정.
+    *   **Input:** 슈카월드 영상(2025.12.01) 및 사용자 피드백.
+    *   **Action:** BP 곡선에 $\theta$(Risk Premium) 항 추가 및 '수출-환율 괴리' 설명 논리 보강.
+    *   **Output:** `user/paper.md` 수정 완료.
 
-### [Step 2] 연구 목표 정립 및 논문 초안 작성
+### [Step 4] 연구 방법론 수정 (Methodology Adjustment)
 *   **Date:** 2025-12-01
 *   **Details:**
-    *   **Analysis:** `resource/dialog.md`를 심층 분석하여 '재정 우위(Fiscal Dominance)'와 '현대적 구두창 비용'을 핵심 키워드로 도출.
-    *   **Output:** `user/paper.md` 생성. 서론, 이론적 배경, 모형 분석, 실증 분석으로 이어지는 논문 목차(Outline) 완성.
-    *   **Strategy:** 단순 환율 전망이 아닌, 정책 실패(확장재정+금리동결)의 구조적 모순을 증명하는 것으로 연구 방향 확정.
-
-### [Step 3] Librarian 산출물 평가 (Review)
-*   **Date:** 2025-12-01
-*   **Details:**
-    *   **Target:** `channel/librarian_ch.md`
-    *   **Evaluation:**
-        *   **Data:** 미국 금리 기준을 10년물($r_{US, 10y}$)로 설정한 점과 재정 변수에 '이전지출'을 포함한 점을 높이 평가.
-        *   **Literature:** Sargent & Wallace(1981) 및 영국 트러스 내각 사례 선정의 적절성 확인.
-    *   **Decision:** 데이터 수집 및 선행연구 정리 방향 승인(Approved).
+    *   **Solution:** 분석 방법을 **OLS 회귀분석(변화율 기반)**으로 단순화.

@@ -51,7 +51,7 @@
 
 ```mermaid
 graph LR
-    A[Raw Data (ECOS, CSV)] --> B(Data Preprocessing);
+    A["Raw Data (ECOS, CSV)"] --> B(Data Preprocessing);
     B --> C{Model Selection};
     C -- Linear Check --> D[OLS Regression];
     C -- Dynamic Analysis --> E[VAR Model];

@@ -75,7 +75,7 @@ $$ BP = NX(e, Y) + KA(r - r^* - \theta) = 0 $$
 2.  **정책 엇박자:** 중앙은행의 금리 동결로 $LM$ 곡선이 이를 수용(Accommodate)하여 금리($r$)는 낮은 수준에 머문다.
 3.  **구조적 이탈:** 리스크 프리미엄 급등으로 $BP$ 곡선은 훨씬 높은 금리 수준을 요구한다.
     
-    ![IS-LM-BP Diagram](/home/pluto2477/Documents/2025-Economics-Academic-Festival/src/image/is_lm_bp_diagram.png)
+    ![IS-LM-BP Diagram](../src/image/is_lm_bp_diagram.png)
     *<그림 1> 수정된 IS-LM-BP 모형에서의 균형 이동: 재정 우위와 리스크 프리미엄 충격이 결합되어 환율 폭등을 유발하는 경로를 보여준다.*
 
 4.  **결과:** 국내 금리가 균형 금리보다 현저히 낮은 상태($r \ll r^* + \theta$)가 지속되어 대규모 자본 유출(Capital Flight)이 발생한다.
@@ -97,7 +97,7 @@ $$ BP = NX(e, Y) + KA(r - r^* - \theta) = 0 $$
     *   $\Delta \theta_t$: **국가 리스크 프리미엄 (CDS 프리미엄)**
     *   $\Delta \ln(e_t)$: 원/달러 환율 변동률
 
-    ![Time Series Plot](/home/pluto2477/Documents/2025-Economics-Academic-Festival/src/image/var_time_series.png)
+    ![Time Series Plot](../src/image/var_time_series.png)
     *<그림 2> 주요 변수의 시계열 추이: 2025년 하반기 리스크 프리미엄($\Delta \theta$)과 환율($\Delta \ln e$)의 동반 급등이 관측된다.*
 
 ### 4.2 분석 모형: VAR (Vector Autoregression)
@@ -107,11 +107,11 @@ $$ Y_t = c + A_1 Y_{t-1} + e_t $$
 ### 4.3 분석 결과 (Results)
 1.  **충격 반응 분석 (Impulse Response Analysis):**
     *   **리스크 프리미엄($\theta$) 충격:**
-        ![IRF Theta to E](/home/pluto2477/Documents/2025-Economics-Academic-Festival/src/image/var_irf_theta_to_e.png)
+        ![IRF Theta to E](../src/image/var_irf_theta_to_e.png)
         *<그림 3> 리스크 프리미엄 충격에 대한 환율 반응: $\theta$의 충격 발생 시 환율($e$)은 즉각적이고 유의미하게 상승하며, 그 효과는 지속적이다.*
 
     *   **재정지출($G$) 충격:**
-        ![IRF G to E](/home/pluto2477/Documents/2025-Economics-Academic-Festival/src/image/var_irf_G_to_e.png)
+        ![IRF G to E](../src/image/var_irf_G_to_e.png)
         *<그림 4> 재정지출 충격에 대한 환율 반응: 재정지출($G$) 충격은 환율에 통계적으로 유의미한 영향을 미치지 못한다. 이는 단순한 재정 확대보다 리스크 요인이 더 중요함을 시사한다.*
 
 2.  **강건성 검정 (Robustness Check):**

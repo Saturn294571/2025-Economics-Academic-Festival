@@ -122,6 +122,8 @@ graph LR
 ### 수정된 IS-LM-BP 모형
 $$ BP = NX(e) + KA(r - r^* - \theta) = 0 $$
 
+![height:300px](../src/image/is_lm_bp_diagram.png)
+
 *   **$\theta$ (Risk Premium):** 국가 신뢰도 및 성장 잠재력.
 *   **Mechanism:**
     1.  방만한 재정(소비쿠폰) $\rightarrow$ 신뢰 하락 $\rightarrow$ **$\theta$ 급등**.
@@ -135,7 +137,7 @@ $$ BP = NX(e) + KA(r - r^* - \theta) = 0 $$
 ### "시장은 무엇을 두려워하는가?"
 *   해외투자 확대, 트럼프 리스크, 국민연금 등이 주요 원인으로 지목됨.
 
-![height:350px](/home/pluto2477/Documents/2025-Economics-Academic-Festival/src/the_exodus_chart.png)
+![height:350px](../src/image/the_exodus_chart.png)
 
 ---
 
@@ -144,7 +146,7 @@ $$ BP = NX(e) + KA(r - r^* - \theta) = 0 $$
 ### "진짜 범인은 리스크 프리미엄($\theta$)"
 *   **VAR 충격 반응 분석 (Impulse Response):**
 
-![height:350px](/home/pluto2477/Documents/2025-Economics-Academic-Festival/src/var_irf_theta_to_e.png)
+![height:350px](../src/image/var_irf_theta_to_e.png)
 
 *   **결과:** 리스크($\theta$) 충격 시 환율($e$)은 **즉각적이고 폭발적으로 상승**.
 
